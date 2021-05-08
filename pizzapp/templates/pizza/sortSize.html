@@ -1,0 +1,19 @@
+<table border="1" width="600">
+    <tr>
+        <td> Pizza name </td>
+        <td> Pizza type </td>
+        <td> Pizza size </td>
+        <td> Pizza toppings </td>
+    </tr>
+
+    {% for p in sorted_size %}
+    <tr>
+        <td> {{p.pizza_name}} </td>
+        <td> {{p.pizza_type}} </td>
+        <td> {{p.pizza_size}} </td>
+        <td> {{p.pizza_toppings}} </td>
+    </tr>
+
+    {% endfor %}
+
+</table>

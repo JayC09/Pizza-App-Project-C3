@@ -1,0 +1,38 @@
+<h3> Here is the information of all the pizzas in the database! </h3>
+
+<a href="{% url 'sortType' %}"> Sort by Type of Pizza </a> 
+<a href="{% url 'sortSize' %}"> Sort by Size of Pizza </a> 
+
+<table border="1" width="600">
+    <tr>
+        <td> Pizza name </td>
+        <td> Pizza type </td>
+        <td> Pizza size </td>
+        <td> Pizza toppings </td>
+    </tr>
+
+    {% for p in allPizzas %}
+    <tr>
+        <td> {{p.pizza_name}} </td>
+        <td> {{p.pizza_type}} </td>
+        <td> {{p.pizza_size}} </td>
+        <td> {{p.pizza_toppings}} </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<!-- 
+{% block content %}
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for user in filter.qs %}
+    <li>{{ user.pizza_name }} - {{ user.pizza_type }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
+-->
