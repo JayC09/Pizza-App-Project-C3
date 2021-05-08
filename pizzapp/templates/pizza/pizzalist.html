@@ -1,15 +1,6 @@
 <h3> Pizza? </h3>
 
-<form method="POST" action="/">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" name="Create Pizza" id="checkType">
-    <!--{% if pizza_type == "Regular" or pizza_type == "Square" or pizza_type == "regular" or pizza_type == "square" %}
-    document.getElementById('checkType').disabled = false
-    {% endif %}-->
-</form>
-
-
+<a href="{% url 'create_pizza' %}"> Create A New Pizza!! </a> 
 
 {% for p in pizza %}
     <div>

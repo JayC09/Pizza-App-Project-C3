@@ -9,7 +9,7 @@ urlpatterns = [
     path('info_pizza/', views.showInfo, name='info_pizza'), 
     path('sortType/', views.sortType, name='sortType'), 
     path('sortSize/', views.sortSize, name='sortSize'), 
-
+    path('create_pizza/', views.createPizza, name='create_pizza'),
     #url(r'^search/$', views.search, name='search'), 
     #url('info_pizza/', views.showInfo)
 ]

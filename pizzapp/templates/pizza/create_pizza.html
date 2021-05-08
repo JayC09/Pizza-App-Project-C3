@@ -1,0 +1,7 @@
+<h3> You can create a new pizza here and it will be added to the database </h3>
+
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Create Pizza" id="checkType">
+</form>

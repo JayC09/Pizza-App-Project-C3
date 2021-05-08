@@ -9,6 +9,13 @@ from django.shortcuts import render
 def index(request):
     p = pizza.objects.all()
 
+    
+    context = {'pizza': p,}
+    return render(request, 'pizza/pizzalist.html', context)
+
+def createPizza(request):
+    p = pizza.objects.all()
+
     p_type =''
     p_size =''
 
@@ -16,7 +23,7 @@ def index(request):
 
     if request.method == 'POST':
         form = PizzaForm(request.POST or None)
-        #if (pizza.pizza_type=="Regular" or pizza.pizza_type=="Square") and (pizza.pizza_size=="Small" or pizza.pizza_size=="Medium" or pizza.pizza_size=="Large"):
+        
         if form.is_valid():
             p_type = form.cleaned_data.get("pizza_type")
             p_size = form.cleaned_data.get("pizza_size")
@@ -25,7 +32,8 @@ def index(request):
             return redirect('/')
 
     context = {'pizza': p, 'form':form}
-    return render(request, 'pizza/pizzalist.html', context)
+    return render(request, 'pizza/create_pizza.html', context)
+
 
 def updatePizza(request, pk):
     p = pizza.objects.get(id=pk)
